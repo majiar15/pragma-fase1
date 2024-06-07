@@ -13,5 +13,6 @@ class AppColors {
 
 
   static const Color buttonPrimaryColor = Color(0xfff4a261);
+  static const Color buttonDisableColor = Color(0xffa2a9af);
 
 }
