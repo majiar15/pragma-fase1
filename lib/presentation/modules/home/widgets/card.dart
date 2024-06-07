@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../domain/models/product.dart';
 import '../../../global/colors/app_colors.dart';
+import '../../../routes/routes.dart';
 
 class CardProduct extends StatelessWidget {
   final Product product;
@@ -58,7 +59,9 @@ class CardProduct extends StatelessWidget {
                     color: AppColors.primaryColorDark, fontSize: 20),
               ),
               OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.detail, arguments: product);
+                },
                 style: OutlinedButton.styleFrom(
                   foregroundColor: AppColors.buttonPrimaryColor,
                   side: const BorderSide(
