@@ -16,10 +16,10 @@ class CardProduct extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, '/detail', arguments: product);
+        Navigator.pushNamed(context, Routes.detail, arguments: product);
       },
       child: Container(
-        height: 350,
+        height: 300,
         margin: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           color: AppColors.surfaceColor,
@@ -45,34 +45,25 @@ class CardProduct extends StatelessWidget {
                   },
                 ),
               ),
-              Text(
-                product.name,
-                style: const TextStyle(
-                  color: AppColors.primaryColorDark,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
-              ),
-              Text(
-                "\$ ${product.price}",
-                style: const TextStyle(
-                    color: AppColors.primaryColorDark, fontSize: 20),
-              ),
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.detail, arguments: product);
-                },
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: AppColors.buttonPrimaryColor,
-                  side: const BorderSide(
-                      color: AppColors.buttonPrimaryColor), // Color del borde
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(8), // Cambia la forma del botón
+              FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text(
+                  product.name,
+                  style: const TextStyle(
+                    color: AppColors.primaryColorDark,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
                   ),
                 ),
-                child: const Text('Ver más'),
-              )
+              ),
+              FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text(
+                  "\$ ${product.price}",
+                  style: const TextStyle(
+                      color: AppColors.primaryColorDark, fontSize: 20),
+                ),
+              ),
             ],
           ),
         ),
