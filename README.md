@@ -40,9 +40,4 @@ flutter pub get
 flutter run
 ```
 
-### _4. pruebe la app_
-
-```
-flutter run
-```
 
